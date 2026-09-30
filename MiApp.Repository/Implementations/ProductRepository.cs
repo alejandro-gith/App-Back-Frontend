@@ -11,7 +11,8 @@ namespace MiApp.Repository.Implementations
     {
         public IEnumerable<Product> GetAll()
         {
-            return InMemoryData.Products;
+            // Devuelve una copia para no exponer la lista compartida
+            return InMemoryData.Products.ToList();
         }
 
         public IEnumerable<string> GetCategories()
@@ -29,3 +30,4 @@ namespace MiApp.Repository.Implementations
         }
     }
 }
+

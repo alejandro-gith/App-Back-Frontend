@@ -24,11 +24,9 @@ builder.Services.AddCors(options =>
 // Registrar Inyección de Dependencias (US01)
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-
-// Registrar Inyección de Dependencias (US04)
+// Registrar servicios del catálogo (US03)
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
-
 var app = builder.Build(); // Se define UNA SOLA VEZ
 
 // Configurar pipeline de peticiones HTTP
