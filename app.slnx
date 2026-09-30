@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="MiApp.API/MiApp.API.csproj" />
+  <Project Path="MiApp.Domain/MiApp.Domain.csproj" />
+  <Project Path="MiApp.Repository/MiApp.Repository.csproj" />
+  <Project Path="MiApp.Service/MiApp.Service.csproj" />
+</Solution>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.31" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiApp.Service\MiApp.Service.csproj" />
+    <ProjectReference Include="..\MiApp.Repository\MiApp.Repository.csproj" />
+    <ProjectReference Include="..\MiApp.Domain\MiApp.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
