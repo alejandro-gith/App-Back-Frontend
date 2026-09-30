@@ -1,0 +1,23 @@
+<div style="max-width: 380px; margin: 80px auto; padding: 24px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: sans-serif;">
+  <h2 style="text-align: center; margin-bottom: 20px;">Iniciar Sesión</h2>
+  
+  <form (ngSubmit)="onSubmit()">
+    <div style="margin-bottom: 15px;">
+      <label for="username" style="display: block; font-weight: bold; margin-bottom: 5px;">Usuario:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" style="width: 100%; padding: 8px; box-sizing: border-box;" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="password" style="display: block; font-weight: bold; margin-bottom: 5px;">Contraseña:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" style="width: 100%; padding: 8px; box-sizing: border-box;" required />
+    </div>
+
+    <div *ngIf="errorMessage" style="color: #d9534f; margin-bottom: 15px; font-size: 14px;">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+      Ingresar
+    </button>
+  </form>
+</div>
