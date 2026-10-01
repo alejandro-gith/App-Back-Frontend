@@ -32,7 +32,7 @@ namespace MiApp.Repository.Data
                 Price = 1200.00m,
                 Category = "Tecnología",
                 Description = "Laptop potente para desarrollo y juegos",
-                Image = "https://via.placeholder.com/150"
+                Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=400&q=80"
             },
             new Product
             {
@@ -41,7 +41,7 @@ namespace MiApp.Repository.Data
                 Price = 800.00m,
                 Category = "Tecnología",
                 Description = "Teléfono con cámara de alta definición",
-                Image = "https://via.placeholder.com/150"
+                Image = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80"
             },
             new Product
             {
@@ -50,7 +50,7 @@ namespace MiApp.Repository.Data
                 Price = 25.00m,
                 Category = "Ropa",
                 Description = "Playera cómoda 100% algodón",
-                Image = "https://via.placeholder.com/150"
+                Image = "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80"
             },
             new Product
             {
@@ -59,7 +59,7 @@ namespace MiApp.Repository.Data
                 Price = 90.00m,
                 Category = "Ropa",
                 Description = "Tenis ideales para correr",
-                Image = "https://via.placeholder.com/150"
+                Image = "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80"
             }
         };
     }
