@@ -24,10 +24,20 @@ builder.Services.AddCors(options =>
 // Registrar Inyección de Dependencias (US01)
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+
 // Registrar servicios del catálogo (US03)
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
-var app = builder.Build(); // Se define UNA SOLA VEZ
+
+// Registrar servicios de usuarios (US11)
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+// Registrar servicios de carritos (US12)
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<ICartService, CartService>();
+
+var app = builder.Build();
 
 // Configurar pipeline de peticiones HTTP
 if (app.Environment.IsDevelopment())
@@ -36,9 +46,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "MiApp API V1");
-        c.RoutePrefix = string.Empty; // <-- Agrega esta línea
     });
 }
+
 app.UseHttpsRedirection();
 app.UseCors("AllowAngular");
 app.UseAuthorization();
