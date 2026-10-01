@@ -1,0 +1,79 @@
+<header class="topbar">
+  <span class="brand">MiApp<span class="dot">.</span>store</span>
+</header>
+
+<main class="catalog">
+  <div class="intro">
+    <h1>Catálogo</h1>
+    <p class="subtitle">Encuentra lo que buscas, filtrando por categoría.</p>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filtrar por categoría">
+    <button type="button" [class.active]="selectedCategory() === null"
+            [attr.aria-pressed]="selectedCategory() === null"
+            (click)="selectCategory(null)">Ver todos</button>
+    @for (category of categories(); track category) {
+      <button type="button" [class.active]="selectedCategory() === category"
+              [attr.aria-pressed]="selectedCategory() === category"
+              (click)="selectCategory(category)">{{ category }}</button>
+    }
+  </div>
+
+  <div class="status" aria-live="polite">
+    @if (!errorMessage()) {
+      @if (loading()) {
+        <p class="count">Cargando productos...</p>
+      } @else {
+        <p class="count">{{ products().length }} {{ products().length === 1 ? 'producto' : 'productos' }}</p>
+      }
+    }
+  </div>
+
+  @if (errorMessage()) {
+    <div class="error-box" role="alert">
+      <p class="error-title">Algo salió mal</p>
+      <p class="error-text">{{ errorMessage() }}</p>
+      <button type="button" class="retry" (click)="retry()">Reintentar</button>
+    </div>
+  }
+
+  <div class="grid" [attr.aria-busy]="loading()">
+    @if (loading()) {
+      @for (n of [1, 2, 3, 4]; track n) {
+        <article class="card skeleton" aria-hidden="true">
+          <div class="card-image"></div>
+          <div class="card-body">
+            <span class="line short"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </article>
+      }
+    }
+
+    @for (product of products(); track product.id) {
+      <article class="card">
+        <div class="card-image">
+          @if (failedImages().has(product.id)) {
+            <div class="placeholder" role="img" [attr.aria-label]="product.title">
+              {{ product.title.charAt(0) }}
+            </div>
+          } @else {
+            <img [src]="product.image" [alt]="product.title" loading="lazy" decoding="async"
+                 (error)="onImageError(product.id)" />
+          }
+        </div>
+        <div class="card-body">
+          <span class="category">{{ product.category }}</span>
+          <h2>{{ product.title }}</h2>
+          <p class="description">{{ product.description }}</p>
+          <p class="price">{{ product.price | currency }}</p>
+        </div>
+      </article>
+    }
+  </div>
+
+  @if (!loading() && !errorMessage() && products().length === 0) {
+    <p class="empty">No hay productos en esta categoría.</p>
+  }
+</main>

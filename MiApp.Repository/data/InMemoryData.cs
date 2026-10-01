@@ -32,7 +32,7 @@ namespace MiApp.Repository.Data
                 Price = 1200.00m,
                 Category = "Tecnología",
                 Description = "Laptop potente para desarrollo y juegos",
-                Image = "https://via.placeholder.com/150"
+                Image = "https://placehold.co/600x600/4f46e5/ffffff?text=Laptop+Gamer"
             },
             new Product
             {
@@ -41,7 +41,7 @@ namespace MiApp.Repository.Data
                 Price = 800.00m,
                 Category = "Tecnología",
                 Description = "Teléfono con cámara de alta definición",
-                Image = "https://via.placeholder.com/150"
+                Image = "https://placehold.co/600x600/6366f1/ffffff?text=Smartphone+Pro"
             },
             new Product
             {
@@ -50,7 +50,7 @@ namespace MiApp.Repository.Data
                 Price = 25.00m,
                 Category = "Ropa",
                 Description = "Playera cómoda 100% algodón",
-                Image = "https://via.placeholder.com/150"
+                Image = "https://placehold.co/600x600/db2777/ffffff?text=Playera"
             },
             new Product
             {
@@ -59,7 +59,7 @@ namespace MiApp.Repository.Data
                 Price = 90.00m,
                 Category = "Ropa",
                 Description = "Tenis ideales para correr",
-                Image = "https://via.placeholder.com/150"
+                Image = "https://placehold.co/600x600/9333ea/ffffff?text=Tenis"
             }
         };
     }
